@@ -110,7 +110,7 @@ RUN cd /tmp && \
 
 # Aquire and build PostGIS 2.4, for PostgreSQL 9.6
 RUN cd /tmp && \
-    rpm -ivh https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-centos96-9.6-3.noarch.rpm && \
+    rpm -ivh https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm && \
     yum install -y epel-release && \
     yum install -y postgis24_96 postgis24_96-client && \
     /usr/bin/install -c -m 755  /usr/pgsql-9.6/lib/postgis* '/opt/rh/rh-postgresql96/root/usr/lib64/pgsql/' && \
