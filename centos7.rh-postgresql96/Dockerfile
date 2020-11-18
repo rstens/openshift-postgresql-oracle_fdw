@@ -121,7 +121,7 @@ RUN cd /tmp && \
 
 # set the oracle library path
 ENV LD_LIBRARY_PATH /usr/lib/oracle/12.2/client64/lib:${LD_LIBRARY_PATH}
-USER 26
+USER 27
 
 ENTRYPOINT ["container-entrypoint"]
 CMD ["run-postgresql"]
