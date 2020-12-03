@@ -1,4 +1,4 @@
-FROM rhel7
+FROM ubi-7/x86_64
 
 # PostgreSQL image for OpenShift with PostGIS extension.
 # Volumes:
