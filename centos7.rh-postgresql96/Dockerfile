@@ -36,7 +36,7 @@ LABEL summary=$SUMMARY \
 
 EXPOSE 5432
 
-COPY root/usr/libexec/fix-permissions /usr/libexec/fix-permissions
+COPY fix-permissions /usr/libexec/fix-permissions
 
 RUN yum install -y centos-release-scl-rh && \
     INSTALL_PKGS="rsync tar gettext bind-utils rh-postgresql96 rh-postgresql96-postgresql-contrib nss_wrapper rh-postgresql96-postgresql-server rh-postgresql96-postgresql-devel" && \

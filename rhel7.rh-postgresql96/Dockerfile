@@ -1,4 +1,4 @@
-FROM ubi-7/x86_64
+FROM registry.access.redhat.com/ubi7/ubi:latest
 
 # PostgreSQL image for OpenShift with PostGIS extension.
 # Volumes:
@@ -35,7 +35,7 @@ LABEL summary=$SUMMARY \
 
 EXPOSE 5432
 
-COPY root/usr/libexec/fix-permissions /usr/libexec/fix-permissions
+COPY fix-permissions /usr/libexec/fix-permissions
 
 # This image must forever use UID 26 for postgres user so our volumes are
 # safe in the future. This should *never* change, the last test is there
@@ -48,7 +48,7 @@ COPY root/usr/libexec/fix-permissions /usr/libexec/fix-permissions
 RUN yum repolist > /dev/null && \
     yum install -y yum-utils gettext && \
     yum-config-manager --disable \* &> /dev/null && \
-    yum-config-manager --enable rhel-server-rhscl-7-rpms && \
+    yum-config-manager --enable ubi-8-appstream && \
     yum-config-manager --enable rhel-7-server-rpms && \
     yum-config-manager --enable rhel-7-server-optional-rpms && \
     INSTALL_PKGS="rsync tar gettext bind-utils rh-postgresql96 rh-postgresql96-postgresql-contrib nss_wrapper rh-postgresql96-postgresql-server rh-postgresql96-postgresql-devel" && \
