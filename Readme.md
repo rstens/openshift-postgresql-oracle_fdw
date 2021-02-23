@@ -1,7 +1,7 @@
 # OpenShift Postgresql / Oracle FDW #
 This repository can be used to build a container featuring Postgresql, Oracle FDW and optionally the pgcrypto and postgis extensions.
 
-The container features an auto-provisioning step on startup that can be used to establish the connection to Oracle.
+The container features an auto-provisioning step on startup that can be used to establish the connection to Oracle.  
 
 ## Versions ##
 PostgreSQL versions currently supported are:
